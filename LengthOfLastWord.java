@@ -7,7 +7,7 @@
 
 public class LengthOfLastWord {
     public int lengthOfLastWord(String s) {
-        if (s==null||s=="")
+        if (s==null||s.equals(""))
             return 0;
         String[] parts = s.split(" +");
         if (parts.length==0)
