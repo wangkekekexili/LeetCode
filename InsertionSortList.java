@@ -16,19 +16,19 @@ public class InsertionSortList {
     	ListNode toInsert = sentinel;
     	
     	while (toInsert.next != null) {
-    		ListNode oneBeforeMax = toInsert;
-    		ListNode max = toInsert.next;
+    		ListNode oneBeforeMin = toInsert;
+    		ListNode min = toInsert.next;
     		ListNode current = toInsert.next;
     		while (current.next != null) {
-    			if (current.next.val > max.val) {
-    				oneBeforeMax = current;
-    				max = current.next;
+    			if (current.next.val > min.val) {
+    				oneBeforeMin = current;
+    				min = current.next;
     			}
     			current = current.next;
     		}
-    		oneBeforeMax.next = max.next;
-    		max.next = toInsert.next;
-    		toInsert.next = max;
+    		oneBeforeMin.next = min.next;
+    		min.next = toInsert.next;
+    		toInsert.next = min;
     		
     		toInsert = toInsert.next;
     		
