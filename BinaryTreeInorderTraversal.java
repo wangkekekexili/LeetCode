@@ -10,7 +10,7 @@ import java.util.Stack;
  */
 public class BinaryTreeInorderTraversal {
 	public List<Integer> inorderTraversal(TreeNode root) {
-		List<TreeNode> list = new ArrayList<TreeNode>();
+		List<Integer> list = new ArrayList<Integer>();
 		if (root == null) {
 			return list;
 		}
@@ -23,7 +23,7 @@ public class BinaryTreeInorderTraversal {
 				current = current.left;
 			}
 			current = stack.pop();
-			list.add(current);
+			list.add(current.val);
 			current = current.right;
 		}
 		return list;
