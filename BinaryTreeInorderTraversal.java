@@ -18,7 +18,7 @@ public class BinaryTreeInorderTraversal {
 		Stack<TreeNode> stack = new Stack<TreeNode>();
 		TreeNode current = root;
 		while (current!=null || stack.empty()==false) {
-			if (current != null) {
+			while (current != null) {
 				stack.push(current);
 				current = current.left;
 			}
