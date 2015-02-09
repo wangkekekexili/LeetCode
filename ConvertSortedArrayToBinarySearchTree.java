@@ -35,8 +35,11 @@ public class ConvertSortedArrayToBinarySearchTree {
 	}
 	
 	public TreeNode sortedArrayToBST(int[] num) {
-    	TreeNode root = new TreeNode(0);
-    	if (num==null || num.length==0) {
+    	if (num==null) {
+    		return null;
+    	}
+		TreeNode root = new TreeNode(0);
+    	if (num.length==0) {
     		return root;
     	}
     	sortedArrayToBST(num, 0, num.length-1, root);
