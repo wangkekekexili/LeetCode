@@ -2,8 +2,6 @@ import java.util.List;
 import java.util.LinkedList;
 import java.util.Stack;
 
-import javax.swing.tree.TreeNode;
-
 /**
  * Given a binary tree, 
  * return the zigzag level order traversal of its nodes' values. 

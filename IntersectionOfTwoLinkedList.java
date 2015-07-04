@@ -1,6 +1,3 @@
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * https://oj.leetcode.com/problems/intersection-of-two-linked-lists/
  * 
