@@ -9,7 +9,8 @@ import java.util.Map;
  */
 
 public class MajorityElement {
-    public int majorityElement(int[] num) {
+	
+    public int majorityElementNaive(int[] num) {
     	if (num==null || num.length==0) {
     		return 0;
     	}
@@ -24,6 +25,32 @@ public class MajorityElement {
     	}
     	
     	return 0;
-    	
     }
+    
+    public int majorityElement(int[] num) {
+    	int element = 0;
+    	int count = 0;
+    	for (int number : num) {
+    		if (count == 0) {
+    			element = number;
+    			count++;
+    		} else if (element == number) {
+    			count++;
+    		} else {
+    			count--;
+    		}
+    	}
+    	count = 0;
+    	for (int number : num) {
+    		if (number == element) {
+    			count++;
+    		}
+    	}
+    	if (count > num.length / 2) {
+    		return element;
+    	} else {
+    		return 0;
+    	}
+    }
+    
 }
