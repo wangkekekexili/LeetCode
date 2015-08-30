@@ -41,7 +41,6 @@ public class BinaryTreePaths {
     				sj.add(Integer.toString(stack.get(index).val));
     			}
     			result.add(sj.toString());
-    			visited.add(current);
     			stack.pop();
     			if (stack.empty() == true) {
     				break;
