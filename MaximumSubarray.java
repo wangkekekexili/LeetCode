@@ -8,25 +8,23 @@
 
 public class MaximumSubarray {
     public int maxSubArray(int[] A) {
-    	int length = A.length;
-    	int[][] matrix = new int[length+1][length+1];
-    	for (int i = 0;i != length;i++) {
-    		matrix[i][i] = A[i];
+    	if (A == null || A.length == 0) {
+    		return 0;
     	}
-    	for (int interval = 1;interval <= length-1;interval++) {
-    		for (int begin = 0;begin <= length-interval;begin++) {
-    			int end = begin+interval;
-    			int temp = 0;;
-    			
-    			if (A[begin] < 0) {
-    				temp = matrix[begin+1][end];
-    			} else {
-    				temp = A[begin]
-    			}
-    			
-    			
-    			
-    			matrix[begin][end] = temp;
+    	if (A.length == 1) {
+    		return A[0];
+    	}
+    	int max = A[0];
+    	int currentMax = A[0];
+    	
+    	for (int index = 1; index < A.length; index++) {
+    		if (currentMax + A[index] > A[index]) {
+    			currentMax += A[index];
+    		} else {
+    			currentMax = A[index];
+    		}
+    		if (currentMax > max) {
+    			max = currentMax;
     		}
     	}
     }	
