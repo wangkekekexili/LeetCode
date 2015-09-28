@@ -17,6 +17,11 @@ public class BalancedBinaryTree {
 		}
 		int leftHeight = height(node.left);
 		int rightHeight = height(node.right);
+		
+		if (ifBalance == false) {
+			return -1;
+		}
+		
 		if (Math.abs(leftHeight - rightHeight) <= 1) {
 			return 1 + Math.max(leftHeight, rightHeight);
 		} else {
