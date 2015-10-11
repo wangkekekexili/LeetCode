@@ -1,5 +1,11 @@
 public class Candy {
     public int candy(int[] ratings) {
+    	if (ratings == null || ratings.length == 0) {
+    		return 0;
+    	}
+    	if (ratings.length == 1) {
+    		return 1;
+    	}
     	int[] candy = new int[ratings.length];
     	for (int index = 0; index != candy.length; index++) {
     		candy[index] = 1;
