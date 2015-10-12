@@ -10,16 +10,16 @@ public class CountPrimes {
 		if (n <= 1) {
 			return 0;
 		}
-		boolean[] visited = new boolean[n];
-		int primeCount = 0;
-		for (int number = 2; number < n; number++) {
-			if (visited[number] == false) {
-				primeCount++;
-				for (int multi = number; multi < n; multi += number) {
-					visited[multi] = true;
+		int numberOfPrimes = 0;
+		boolean[] visited = new boolean[n+1];
+		for (int candidate = 2; candidate <= n; candidate++) {
+			if (visited[candidate] == false) {
+				numberOfPrimes++;
+				for (int toVisit = candidate; toVisit <= n; toVisit+=candidate) {
+					visited[toVisit] = true;
 				}
 			}
 		}
-		return primeCount;
+		return numberOfPrimes;
 	}
 }
