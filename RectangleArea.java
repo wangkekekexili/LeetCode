@@ -12,6 +12,6 @@ public class RectangleArea {
 			targetArea = (targetTopRightX - targetBottomLeftX) *
 					(targetTopRightY - targetBottomLeftY);
 		} 
-		
+		return (C-A)*(D-B) + (G-E)*(H-F) - targetArea;
     }
 }
